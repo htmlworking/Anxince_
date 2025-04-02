@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安芯测 - 全自动尿液分析健康管理机器人</title>
+    <meta name="description" content="专注于全自动、非侵入式实时尿液分析健康管理机器人研发">
+    <meta name="keywords" content="医疗机器人,尿液检测,健康管理,慢性病防控,数字微流控,AI算法">
+    <!-- 引入 Font Awesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- 核心样式 -->
+    <style>
+        /* 基础样式 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 导航栏 */
+        .team-table {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin: 0 auto 30px;
+        max-width: 800px;
+    }
+
+    .table-header {
+        display: flex;
+        background: linear-gradient(to right, #007BFF, #00a2ff);
+        color: white;
+        font-weight: 600;
+        padding: 18px 30px;
+    }
+
+    .table-row {
+        display: flex;
+        padding: 20px 30px;
+        border-bottom: 1px solid #f0f0f0;
+        transition: background 0.3s;
+    }
+
+    .table-row:last-child {
+        border-bottom: none;
+    }
+
+    .table-row:hover {
+        background: #f8f9fa;
+    }
+
+    .table-cell {
+        flex: 1;
+        text-align: left;
+        font-size: 16px;
+        padding: 8px 0;
+    }    
+/* 导航栏 */
+.navbar {
+    background: #007BFF; /* 更纯净的蓝色 */
+    padding: 12px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* 图标与文字间距 */
+}
+.logo {
+    height: 36px; /* 调整logo高度 */
+    transition: none; /* 移除原有动画，保持简洁 */
+}
+.navbar-nav {
+    display: flex;
+    gap: 24px; /* 导航项间距 */
+}
+.nav-link {
+    color: white !important;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    padding: 8px 0;
+    transition: color 0.3s;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: white;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s;
+}
+.nav-link:hover {
+    color: #e0f0ff !important;
+}
+.nav-link:hover::after {
+    width: 60%;
+}
+
+/* 响应式调整（小屏优化） */
+@media (max-width: 768px) {
+    .navbar-nav {
+        gap: 16px;
+    }
+    .nav-link {
+        font-size: 14px;
+    }
+}
+        /* 横幅 */
+        .banner {
+            /* 更换为插入图片 */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('logo2.png');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+       
+
+        .banner-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .banner h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .banner p {
+            font-size: 28px;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(to right, #007BFF, #00a2ff);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(to right, #00a2ff, #007BFF);
+            transform: translateY(-3px);
+        }
+
+        /* 核心优势 */
+        .features {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px);
+        }
+
+        .feature-icon {
+            font-size: 80px;
+            color: #00a2ff;
+            margin-bottom: 20px;
+            animation: scaleIn 0.5s ease-in-out;
+        }
+
+        /* 产品介绍 */
+        .product-section {
+            padding: 100px 0;
+        }
+
+        .product-card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+        }
+
+        .product-image {
+            height: 350px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 30px;
+        }
+
+        .product-title {
+            color: #00a2ff;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        /* 团队介绍 */
+        .team-section {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .team-member {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .team-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            object-fit: cover;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .team-member:hover .team-photo {
+            transform: scale(1.1);
+        }
+
+        .member-name {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .member-title {
+            color: #666;
+        }
+
+        /* 页脚 */
+        footer {
+            background: linear-gradient(to right, #007BFF, #00a2ff);
+            color: white;
+            padding: 60px 0;
+        }
+
+        .footer-logo {
+            height: 80px;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .footer-logo:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-link:hover {
+            color: #e0f0ff;
+        }
+
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.8);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+        .navbar-brand span {
+        font-weight: 600; 
+        letter-spacing: 1px; 
+        font-size: 20px; 
+        display: inline-block;
+        margin-left: 8px; 
+        line-height: 40px; 
+    }
+    .logo {
+        height: 32px; /* 图标高度适配文字 */
+        transition: transform 0.3s; /* 增加悬停动画 */
+    }
+    .logo:hover {
+        transform: scale(1.05);
+    }
+    .product-link {
+    text-decoration: none;
+}
+    </style>
+        
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="logo.png" alt="安芯测" class="logo">
+                <span>安芯测</span>
+            </a>
+            <div class="navbar-nav">
+                <a href="#features" class="nav-link">核心优势</a>
+                <a href="#product" class="nav-link">产品系列</a>
+                <a href="#team" class="nav-link">研发团队</a>
+                <a href="#contact" class="nav-link">联系我们</a>
+            </div>
+        </div>
+    </nav>
+    <!-- 横幅 -->
+    <section class="banner" id="home">
+        <div class="container text-center">
+            <div class="banner-content">
+                <h1 class="mb-4"> 尿液分析健康管理机器人 </h1>
+                <p class="mb-4"> 全自动、非侵入式 | 医疗级检测精度 | AI智能健康管理</p>
+                <a href="#contact" class="cta-button">立即预约体验</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心优势 -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <i class="feature-icon fas fa-flask"></i>
+                        <h3 class="mb-3">10+项指标检测</h3>
+                        <p>实时监测尿糖、尿酸、肌酐、蛋白质等关键代谢指标</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <i class="feature-icon fas fa-microscope"></i>
+                        <h3 class="mb-3">医疗级精度</h3>
+                        <p>检测误差<5%，符合ISO 15197标准</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <i class="feature-icon fas fa-cloud"></i>
+                        <h3 class="mb-3">AI健康管理</h3>
+                        <p>动态生成个性化健康方案，支持远程医疗对接</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品介绍 -->
+    <section class="product-section" id="product">
+        <div class="container text-center">
+            <h2 class="section-title mb-5">产品系列</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <a href="flagship.html" class="product-link">
+                        <div class="product-card">
+                            <img src="flagship.png" alt="感知系列" class="product-image">
+                            <div class="product-info">
+                                <h3 class="product-title">感知系列</h3>
+                               <p> "感知系列”是安芯测公司推出的首款高精度尿液检测机器人，旨在地这液分析的精度与效率。</p>
+                                <p>感知系列不仅仅是一个普通的医疗检测设备，它还融合了智处理能力，能够在保证检测精度的问时，大幅度提高检测速度。</p>
+                                <p>该系列产品的核心是高精生物传感器与先进的控制算法，能够在短时间内完成尿液中的常规检查指标(如尿蛋白、尿尿潜血等)的检测</p>
+                                <a href="flagship.html" class="cta-button mt-4">查看详情</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 团队介绍 -->
+    <section class="team-section" id="team">
+        <div class="container text-center">
+            <h2 class="section-title mb-5">核心研发团队</h2>
+            <div class="team-table">
+                <div class="table-header">
+                    <div class="table-cell">职位</div>
+                    <div class="table-cell">职责</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">总经理</div>
+                    <div class="table-cell">全面统筹公司整体运作，协调各部门协同合作，确保公司运营顺畅。致力于构建并完善科学高效的企业管理体系与组织机构，对公司日常运营进行严格监督与管理。在重大事务决策中发挥关键作用，引领高层管理团队，精准把握公司发展方向。积极代表公司与外部利益相关方展开沟通，维护良好合作关系。密切监控公司财务状况，保障财务稳健，同时确保公司运营全程符合法律法规要求。</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">研发副部长</div>
+                    <div class="table-cell">跟随公司研发方向，深入开展前沿技术研究与产品创新。负责本公司产品的硬件系统需求分析、系统架构设计，组织、制定和实施开发计划。带领团队攻克重大技术难题。</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">首席工程师</div>
+                    <div class="table-cell">主导公司研发方向，带领研发团队开展前沿技术研究与产品创新。负责制定研发战略与计划，合理分配研发资源，把控研发项目进度与质量。积极引进先进技术与理念，推动公司技术水平持续提升，确保公司产品在市场中具备核心竞争力，满足市场需求与客户期望。</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">管理运营部长</div>
+                    <div class="table-cell">全面负责公司运营管理工作，优化业务流程，提升运营效率。深入分析市场动态与用户需求，制定并执行运营策略，推动产品推广与用户增长。有效协调各部门资源，保障运营活动顺利开展，提升用户体验与满意度，实现公司业务的持续增长与稳定发展。</div>
+                </div>
+            </div>
+            <a href="team_all.html" class="cta-button mt-4">查看更多</a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="logo.png" alt="安芯测" class="footer-logo">
+                    <p class="mb-3"></p>
+                    <p>地址：北京市大兴区生物医药基地</p>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="mb-3">快速链接</h4>
+                    <a href="#features" class="footer-link">核心优势</a>
+                    <a href="#product" class="footer-link">产品系列</a>
+                    <a href="#team" class="footer-link">研发团队</a>
+                    <a href="#contact" class="footer-link">联系我们</a>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="mb-3">合作支持</h4>
+                    <p>技术支持：北京师范大学</p>
+ 
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

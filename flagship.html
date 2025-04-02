@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安芯测 - 旗舰版产品介绍</title>
+    <meta name="description" content="安芯测旗舰版全自动尿液分析健康管理机器人，具备10+项代谢指标检测、AI趋势预测系统和家庭健康数据平台。">
+    <meta name="keywords" content="医疗机器人,尿液检测,健康管理,慢性病防控,数字微流控,AI算法,旗舰版">
+    <!-- 引入 Font Awesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- 核心样式 -->
+    <style>
+        /* 基础样式 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 导航栏 */
+        .navbar {
+    background: #007BFF; /* 更纯净的蓝色 */
+    padding: 12px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* 图标与文字间距 */
+}
+.logo {
+    height: 36px; /* 调整logo高度 */
+    transition: none; /* 移除原有动画，保持简洁 */
+}
+.navbar-nav {
+    display: flex;
+    gap: 24px; /* 导航项间距 */
+}
+.nav-link {
+    color: white !important;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    padding: 8px 0;
+    transition: color 0.3s;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: white;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s;
+}
+.nav-link:hover {
+    color: #e0f0ff !important;
+}
+.nav-link:hover::after {
+    width: 60%;
+}
+
+/* 响应式调整（小屏优化） */
+@media (max-width: 768px) {
+    .navbar-nav {
+        gap: 16px;
+    }
+    .nav-link {
+        font-size: 14px;
+    }
+}
+        /* 横幅 */
+        .banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('banner-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .banner-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .banner h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .banner p {
+            font-size: 28px;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(to right, #007BFF, #00a2ff);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(to right, #00a2ff, #007BFF);
+            transform: translateY(-3px);
+        }
+
+        /* 核心优势 */
+        .features {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px);
+        }
+
+        .feature-icon {
+            font-size: 80px;
+            color: #00a2ff;
+            margin-bottom: 20px;
+            animation: scaleIn 0.5s ease-in-out;
+        }
+
+        /* 产品介绍 */
+        .product-section {
+            padding: 100px 0;
+        }
+
+        .product-card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+        }
+
+        .product-image {
+            height: 350px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 30px;
+        }
+
+        .product-title {
+            color: #00a2ff;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        /* 团队介绍 */
+        .team-section {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .team-member {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .team-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            object-fit: cover;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .team-member:hover .team-photo {
+            transform: scale(1.1);
+        }
+
+        .member-name {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .member-title {
+            color: #666;
+        }
+
+        /* 页脚 */
+        footer {
+            background: linear-gradient(to right, #007BFF, #00a2ff);
+            color: white;
+            padding: 60px 0;
+        }
+
+        .footer-logo {
+            height: 80px;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .footer-logo:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-link:hover {
+            color: #e0f0ff;
+        }
+
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.8);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+ <!-- 导航栏 -->
+ <nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="#home">
+            <img src="logo.png" alt="安芯测" class="logo">
+            <span>安芯测</span>
+        </a>
+        <div class="navbar-nav">
+            <a href="11.html#features" class="nav-link">核心优势</a>
+            <a href="11.html#product" class="nav-link">产品系列</a>
+            <a href="11.html#team" class="nav-link">研发团队</a>
+            <a href="11.html#contact" class="nav-link">联系我们</a>
+        </div>
+    </div>
+</nav>
+    <!-- 产品详细介绍 -->
+    <section class="product-section">
+        <div class="container text-center">
+            <h2 class="section-title mb-5">感知系列产品详细介绍</h2>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="product-card">
+                        <img src="flagship.png" alt="旗舰版" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">感知系列</h3>
+                            <p></p>
+                            <ul class="text-left">
+                                <p>产品规格：</p>
+                                <li>有效负载: 50 持不同种类的传感器和模块。</li>
+                                <li>工作半径: 300mm，确保设备能够在有限的空间内完成多角度操作</li>
+                                <li>重复定位精度: ±0.5mm，保证检测时的精度与一致性</li>
+                                <li>重量: 105g，便于移动和运输，适合多种工作环境。</li>
+                                <li>电源输入: 12V，5A，适应常见的电力要求，便于接入现有的设备环境</li>
+                                <li>工作温度: 0 - 45°C，适应常见的家庭环境。</li>
+                                <li>通信方式: USB、Wi-Fi、蓝牙，多种通信方式，确保数据传输的稳定性</li>
+                                <p>产品功能</p>
+                                <li>全自动化尿液代谢分析：借助微流控光学传感器，用户如厕就能完成10余种小分子及多种蛋白质检测，5分钟出结果，满足慢性病患者和家庭用户便捷、无创的健康监测需求。</li>
+                                <li>实时健康数据生成：检测后5分钟内生成健康报告，运用深度学习模型给出实时数据与个性化分析，助力慢性病患者和家庭用户了解健康状况。</li>
+                                <li>慢性病风险预警：持续监测代谢指标，预测糖尿病等疾病风险，让慢性病患者和家庭用户在疾病隐匿期就采取应对措施。</li>
+                                <li>医疗级检测精度：检测的一致性、灵敏度和特异性与医院大型生化设备相当，误差＜5%，为慢性病患者和家庭用户提供可靠检测结果。</li>
+                                <li>无创与连续性监测：无需采血，可长期跟踪代谢指标，帮助慢性病患者和家庭用户掌握健康变化趋势 。</li>
+                                <li>数据整合与AI赋能：搭建个人健康数据库，未来借助AIGC大模型整合饮食、遗传及DNA数据。为慢性病患者积累代谢数据，助力长期病情跟踪，为家庭用户生成个性化健康建议，从单一检测迈向全面健康管理，满足智能化与个性化健康管理需求 。</li>
+                            </ul>
+                            <a href="11.html#contact" class="cta-button mt-4">立即预约体验</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="logo.png" alt="安芯测" class="footer-logo">
+
+                    <p>地址：北京市大兴区生物医药基地</p>
+
+                </div>
+                <div class="col-md-4">
+                    <h4 class="mb-3">快速链接</h4>
+                    <a href="index.html#features" class="footer-link">核心优势</a>
+                    <a href="index.html#product" class="footer-link">产品系列</a>
+                    <a href="index.html#team" class="footer-link">研发团队</a>
+                    <a href="index.html#contact" class="footer-link">联系我们</a>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="mb-3">合作支持</h4>
+                    <p>技术支持：北京师范大学</p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

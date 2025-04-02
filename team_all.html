@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安芯测 - 全部研发团队成员</title>
+    <meta name="description" content="安芯测项目的全部研发团队成员介绍">
+    <meta name="keywords" content="医疗机器人,尿液检测,健康管理,研发团队">
+    <!-- 引入 Font Awesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- 核心样式 -->
+    <style>
+        /* 基础样式 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 导航栏 */
+        .navbar {
+    background: #007BFF; /* 更纯净的蓝色 */
+    padding: 12px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* 图标与文字间距 */
+}
+.logo {
+    height: 36px; /* 调整logo高度 */
+    transition: none; /* 移除原有动画，保持简洁 */
+}
+.navbar-nav {
+    display: flex;
+    gap: 24px; /* 导航项间距 */
+}
+.nav-link {
+    color: white !important;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    padding: 8px 0;
+    transition: color 0.3s;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: white;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s;
+}
+.nav-link:hover {
+    color: #e0f0ff !important;
+}
+.nav-link:hover::after {
+    width: 60%;
+}
+
+/* 响应式调整（小屏优化） */
+@media (max-width: 768px) {
+    .navbar-nav {
+        gap: 16px;
+    }
+    .nav-link {
+        font-size: 14px;
+    }
+}
+        /* 团队介绍 */
+        .team-section {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .team-member {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .team-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            object-fit: cover;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .team-member:hover .team-photo {
+            transform: scale(1.1);
+        }
+
+        .member-name {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .member-title {
+            color: #666;
+        }
+
+        /* 页脚 */
+        footer {
+            background: linear-gradient(to right, #007BFF, #00a2ff);
+            color: white;
+            padding: 60px 0;
+        }
+
+        .footer-logo {
+            height: 80px;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .footer-logo:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-link:hover {
+            color: #e0f0ff;
+        }
+
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.8);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+        .team-table {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin: 0 auto 30px;
+        max-width: 800px;
+    }
+
+    .table-header {
+        display: flex;
+        background: linear-gradient(to right, #007BFF, #00a2ff);
+        color: white;
+        font-weight: 600;
+        padding: 18px 30px;
+    }
+
+    .table-row {
+        display: flex;
+        padding: 20px 30px;
+        border-bottom: 1px solid #f0f0f0;
+        transition: background 0.3s;
+    }
+
+    .table-row:last-child {
+        border-bottom: none;
+    }
+
+    .table-row:hover {
+        background: #f8f9fa;
+    }
+
+    .table-cell {
+        flex: 1;
+        text-align: left;
+        font-size: 16px;
+        padding: 8px 0;
+    }    
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="logo.png" alt="安芯测" class="logo">
+                <span>安芯测</span>
+            </a>
+            <div class="navbar-nav">
+                <a href="11.html#features" class="nav-link">核心优势</a>
+                <a href="11.html#product" class="nav-link">产品系列</a>
+                <a href="11.html#team" class="nav-link">研发团队</a>
+                <a href="11.html#contact" class="nav-link">联系我们</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 团队介绍 -->
+    <section class="team-section" id="team">
+        <div class="container text-center">
+            <h2 class="section-title mb-5">核心研发团队</h2>
+            <div class="team-table">
+                <div class="table-header">
+                    <div class="table-cell">职位</div>
+                    <div class="table-cell">职责</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">总经理</div>
+                    <div class="table-cell">全面统筹公司整体运作，协调各部门协同合作，确保公司运营顺畅。致力于构建并完善科学高效的企业管理体系与组织机构，对公司日常运营进行严格监督与管理。在重大事务决策中发挥关键作用，引领高层管理团队，精准把握公司发展方向。积极代表公司与外部利益相关方展开沟通，维护良好合作关系。密切监控公司财务状况，保障财务稳健，同时确保公司运营全程符合法律法规要求。</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">研发副部长</div>
+                    <div class="table-cell">跟随公司研发方向，深入开展前沿技术研究与产品创新。负责本公司产品的硬件系统需求分析、系统架构设计，组织、制定和实施开发计划。带领团队攻克重大技术难题。</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">首席工程师</div>
+                    <div class="table-cell">主导公司研发方向，带领研发团队开展前沿技术研究与产品创新。负责制定研发战略与计划，合理分配研发资源，把控研发项目进度与质量。积极引进先进技术与理念，推动公司技术水平持续提升，确保公司产品在市场中具备核心竞争力，满足市场需求与客户期望。</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">管理运营部长</div>
+                    <div class="table-cell">全面负责公司运营管理工作，优化业务流程，提升运营效率。深入分析市场动态与用户需求，制定并执行运营策略，推动产品推广与用户增长。有效协调各部门资源，保障运营活动顺利开展，提升用户体验与满意度，实现公司业务的持续增长与稳定发展。</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">营销部长</div>
+                    <div class="table-cell">负责项目的日常运营管理与宣传，定期发布推广内容。
+                        负责在硬件系统部署控制算法并设计实验、采集并分析数据以分析用户增长、宣传推广的互动率，跟踪不同平台的最新趋势，及时调整宣发和运营策略。
+                        </div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">人事部长</div>
+                    <div class="table-cell">承担公司人才管理重任，负责人才选报与招聘工作，为公司引入优秀人才。科学合理分配人员岗位，做到人岗匹配，充分发挥员工潜能。建立并完善人才培养与激励机制，提升员工满意度与忠诚度，打造高素质人才队伍，为公司发展提供坚实人力保障。</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">财务部长</div>
+                    <div class="table-cell">把控公司财务命脉，制定财务战略与预算计划，对公司财务状况进行全面监控与分析。负责资金管理、成本控制与财务风险防范，为公司重大决策提供专业财务支持。严格遵守财务法规与会计准则，确保公司财务运作合法合规，保障公司财务健康与稳定。</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">宣发部长</div>
+                    <div class="table-cell">全面掌控公司宣传与推广工作的核心命脉，精心策划并制定全方位的宣传战略与推广计划，精准把握市场动态与品牌定位，对公司品牌形象塑造、市场影响力提升以及产品推广效果进行深度监控与细致分析。为公司重大活动、品牌建设等决策提供精准专业的宣传支持与策略建议。</div>
+                </div>
+
+                <!-- 继续添加更多团队成员 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="logo.png" alt="安芯测" class="footer-logo">
+
+                    <p>地址：北京市大兴区生物医药基地</p>
+
+                </div>
+                <div class="col-md-4">
+                    <h4 class="mb-3">快速链接</h4>
+                    <a href="11.html#features" class="footer-link">核心优势</a>
+                    <a href="11.html#product" class="footer-link">产品系列</a>
+                    <a href="11.html#team" class="footer-link">研发团队</a>
+                    <a href="11.html#contact" class="footer-link">联系我们</a>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="mb-3">合作支持</h4>
+                    <p>技术支持：北京师范大学</p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
